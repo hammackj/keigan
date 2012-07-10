@@ -27,16 +27,16 @@
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 
 require 'rubygems'
-require "kekkan"
+require "keigan"
 require 'rake'
 require 'rake/testtask'
 
 task :build do
-  system "gem build #{Kekkan::APP_NAME}.gemspec"
+  system "gem build #{Keigan::APP_NAME}.gemspec"
 end
 
 task :release => :build do
-  system "gem push #{Kekkan::APP_NAME}-#{Kekkan::VERSION}.gem"
+  system "gem push #{Keigan::APP_NAME}-#{Keigan::VERSION}.gem"
 end
 
 task :clean do

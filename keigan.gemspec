@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
 	s.author = "Jacob Hammack"
 	s.email = "keigan@arxopia.com"
 
-	s.files	= Dir['[A-Z]*'] + Dir['lib/**/*'] + ['Keigan.gemspec']
+	s.files	= Dir['[A-Z]*'] + Dir['lib/**/*'] + ['keigan.gemspec']
 	s.bindir = "bin"
 	s.executables = "#{Keigan::APP_NAME}"
 	s.require_paths = ["lib"]
