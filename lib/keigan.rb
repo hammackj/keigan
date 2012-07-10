@@ -27,4 +27,5 @@
 module Keigan
 	APP_NAME = "keigan"
 	VERSION = "0.0.0"
+	CONFIG_FILE = "./risu.cfg"
 end
