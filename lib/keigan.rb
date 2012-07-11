@@ -26,7 +26,7 @@
 
 module Keigan
 	APP_NAME = "keigan"
-	VERSION = "0.0.0"
+	VERSION = "0.0.1"
 	CONFIG_FILE = "./risu.cfg"
 	AUTHOR = "Arxopia LLC."
 	EMAIL = "keigan@arxopia.com"
