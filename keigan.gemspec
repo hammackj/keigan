@@ -51,9 +51,7 @@ Gem::Specification.new do |s|
 	s.required_rubygems_version = ">= 1.8.24"
 	s.rubyforge_project	= "#{Keigan::APP_NAME}"
 
-	#s.add_development_dependency("simplecov", [">= 0.9.9"])
-	#s.add_development_dependency("yard", [">= 0.6.4"])
-
-	#s.add_dependency('rails', ['>= 3.0.7'])
-	#s.add_dependency('libxml-ruby', ['>= 1.1.4'])
+	s.add_dependency('risu', ['>= 1.5.1'])
+	s.add_dependency('sinatra', [">= 1.3.2"])
+	s.add_dependency('haml', [">= 3.1.4"])
 end
