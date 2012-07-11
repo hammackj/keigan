@@ -28,4 +28,18 @@ module Keigan
 	APP_NAME = "keigan"
 	VERSION = "0.0.0"
 	CONFIG_FILE = "./risu.cfg"
+	AUTHOR = "Arxopia LLC."
+	EMAIL = "keigan@arxopia.com"
+	SITE = "http://www.arxopia.com/projects/keigan"
 end
+
+require 'optparse'
+
+require 'sinatra'
+require 'haml'
+require 'risu'
+
+require 'keigan/cli'
+require 'keigan/web'
+
+include Risu::Models
