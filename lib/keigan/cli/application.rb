@@ -83,19 +83,19 @@ module Keigan
 					if @database["adapter"] == nil
 						puts "[!] #{@database['adapter']}" if @options[:debug]
 
-						return false, "[!] Invalid database adapter, please check your config file"
+						return false, "[!] Invalid database adapter, please check your configuration file"
 					end
 
 					ActiveRecord::Base.establish_connection(@database)
 					ActiveRecord::Base.connection
 
 				rescue ActiveRecord::AdapterNotSpecified => ans
-					puts "[!] Database adapter not found, please check your config file"
+					puts "[!] Database adapter not found, please check your configuration file"
 					puts "#{ans.message}\n #{ans.backtrace}" if @options[:debug]
 
 					exit
 				rescue ActiveRecord::AdapterNotFound => anf
-					puts "[!] Database adapter not found, please check your config file"
+					puts "[!] Database adapter not found, please check your configuration file"
 					puts "#{anf.message}\n #{anf.backtrace}" if @options[:debug]
 
 					exit
@@ -136,7 +136,7 @@ module Keigan
 							if File.exists?(option) == true
 								@options[:config_file] = option
 							else
-								puts "[!] Specified config file does not exist. Please specify a file that exists."
+								puts "[!] Specified configuration file does not exist. Please specify a file that exists."
 								exit
 							end
 						end
@@ -160,10 +160,6 @@ module Keigan
 							@options[:debug] = true
 						end
 
-						opt.on('--webgui', 'Starts an local web server for viewing the database') do |option|
-							@options[:webgui] = option
-						end
-
 						opt.on_tail("-?", "--help", "Show this message") do
 							puts opt.to_s + "\n"
 							exit
@@ -173,8 +169,8 @@ module Keigan
 					if ARGV.length != 0
 						opts.parse!
 					else
-						puts opts.to_s + "\n"
-						exit
+					#	puts opts.to_s + "\n"
+					#	exit
 					end
 				rescue OptionParser::MissingArgument => m
 					puts opts.to_s + "\n"
@@ -201,20 +197,18 @@ module Keigan
 					load_config
 				end
 
-				db_connect
-
-				if @options[:webgui] != nil
-					puts "Keigan Web Interface at http://localhost:8969/"
-					Keigan::Web::Application.run!
-					exit
-				end
-
 				if @options[:test_connection] != nil
 					result = test_connection?
 
 					puts "#{result[1]}"
 					exit
 				end
+
+				db_connect
+
+				puts "Keigan Web Interface at http://localhost:8969/"
+				Keigan::Web::Application.run!
+
 			end
 		end
 	end
