@@ -33,4 +33,5 @@ $stderr.sync = true
 require 'rubygems'
 require 'keigan'
 
-puts "Soon."
+app = Keigan::Cli::Application.new
+app.run
