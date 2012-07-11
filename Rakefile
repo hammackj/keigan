@@ -47,9 +47,9 @@ task :clean do
 	system "rm -rf coverage"
 end
 
-task :default => [:test_unit]
+task :default => [:test]
 
-Rake::TestTask.new("test_unit") { |t|
+Rake::TestTask.new("test") { |t|
 	t.libs << "test"
   t.pattern = 'test/*/*_test.rb'
   t.verbose = true
