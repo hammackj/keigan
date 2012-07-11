@@ -37,6 +37,7 @@ end
 
 task :release => :build do
   system "gem push #{Keigan::APP_NAME}-#{Keigan::VERSION}.gem"
+  puts "Just released #{Keigan::APP_NAME} v#{Keigan::VERSION}. #{Keigan::APP_NAME} is always available in RubyGems! More information at http://arxopia.com/projects/keigan/"
 end
 
 task :clean do

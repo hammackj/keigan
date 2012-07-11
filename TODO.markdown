@@ -7,3 +7,4 @@
 - Better layout all the pages and properly display everything
 - Allow editing
 - 100% code coverage for unit and integration tests
+	-http://www.sinatrarb.com/testing.html
