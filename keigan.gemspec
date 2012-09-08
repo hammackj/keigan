@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
 	s.version = Keigan::VERSION
 	s.homepage = "http://www.arxopia.com/projects/keigan"
 	s.summary = "#{Keigan::APP_NAME}"
-	s.description = "#{Keigan::APP_NAME} is a set of parsers for NVD CVE / CPE xml files"
+	s.description = "#{Keigan::APP_NAME} is a on demand web interface for a Risu database"
 	s.license = "BSD"
 
 	s.author = "Jacob Hammack"
